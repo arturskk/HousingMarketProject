@@ -1,0 +1,30 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: <Gmail username>
+    password: <Gmail password>
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+resilience4j:
+  retry:
+  instances:
+    getHousingMarketStats:
+      maxRetryAttempts: 3
+      waitDuration: 2s
+      enableRandomizedWait: true
+      randomizedWaitFactor: 0.5
+
+mail:
+  address: <address here>
+
+integration:
+  housingMarket: localhost:8082
