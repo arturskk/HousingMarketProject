@@ -1,4 +1,4 @@
-package com.housing.market;
+package com.housing.market.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;

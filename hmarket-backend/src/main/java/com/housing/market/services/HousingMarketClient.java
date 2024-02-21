@@ -1,5 +1,7 @@
-package com.housing.market;
+package com.housing.market.services;
 
+import com.housing.market.form.MarketDataForm;
+import com.housing.market.dto.Region;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,8 +19,8 @@ public class HousingMarketClient {
     private final RestTemplate restTemplate;
     private final MarketService marketService;
     private final EmailService emailService;
-    @Value("${integration.housingMarket}")
-    private static String URI;
+    @Value("${integration.housingmarket}")
+    private String URI;
     @Value("${mail.address}")
     private String mailAddress;
 
@@ -32,7 +34,7 @@ public class HousingMarketClient {
         }
     }
 
-    private void fallbackMail(Long regionID, RuntimeException re) {
-        emailService.sendEmail(mailAddress, "Data download failed 3 times", "Data download failed 3 times for regionID: " + regionID);
+    private void fallbackMail(RuntimeException re) {
+        emailService.sendEmail(mailAddress, "Data download failed 3 times", "Data download failed 3 times");
     }
 }

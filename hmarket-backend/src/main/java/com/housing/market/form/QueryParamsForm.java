@@ -1,8 +1,12 @@
-package com.housing.market;
+package com.housing.market.form;
 
+import com.housing.market.dto.Region;
+import com.housing.market.dto.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 import java.util.Date;
 @Setter
 @Getter
@@ -13,9 +17,9 @@ public class QueryParamsForm {
     private String types;
 
     @DateTimeFormat(pattern = "yyyyMMdd")
-    private Date dateSince;
+    private LocalDate dateSince;
 
     @DateTimeFormat(pattern = "yyyyMMdd")
-    private Date dateUntil;
+    private LocalDate dateUntil;
 
 }

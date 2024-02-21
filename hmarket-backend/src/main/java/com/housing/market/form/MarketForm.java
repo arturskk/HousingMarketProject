@@ -1,5 +1,7 @@
-package com.housing.market;
+package com.housing.market.form;
 
+import com.housing.market.dto.Region;
+import com.housing.market.dto.Type;
 import lombok.Data;
 import java.math.BigDecimal;
 @Data

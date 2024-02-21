@@ -1,6 +1,5 @@
-package com.housing.market;
+package com.housing.market.form;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import java.util.List;
 @Data

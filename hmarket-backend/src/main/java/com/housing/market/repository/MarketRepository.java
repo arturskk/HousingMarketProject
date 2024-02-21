@@ -1,5 +1,7 @@
-package com.housing.market;
+package com.housing.market.repository;
 
+import com.housing.market.domain.Market;
+import com.housing.market.form.QueryParamsForm;
 import jakarta.persistence.criteria.Predicate;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,7 +18,7 @@ public interface MarketRepository extends JpaRepository<Market, Long>, JpaSpecif
 
             Predicate predicate = cb.isTrue(cb.literal(true));
             if (form.getSize() != null) {
-                predicates.add(cb.between(root.get("area"), form.getSize().rangeMin, form.getSize().rangeMax));
+                predicates.add(cb.between(root.get("area"), form.getSize().getRangeMin(), form.getSize().getRangeMax()));
             }
             if (form.getRooms() != null) {
                 predicates.add(cb.equal(root.get("rooms"), form.getRooms()));
@@ -25,10 +27,10 @@ public interface MarketRepository extends JpaRepository<Market, Long>, JpaSpecif
                 predicates.add(cb.equal(root.get("regionId"), form.getRegionId()));
             }
             if (form.getDateSince() != null) {
-                predicates.add(cb.greaterThanOrEqualTo(root.get("date"), form.getDateSince()));
+                predicates.add(cb.greaterThanOrEqualTo(root.get("marketDate"), form.getDateSince()));
             }
             if (form.getDateUntil() != null) {
-                predicates.add(cb.lessThanOrEqualTo(root.get("date"), form.getDateUntil()));
+                predicates.add(cb.lessThanOrEqualTo(root.get("marketDate"), form.getDateUntil()));
             }
             if (form.getTypes() != null && !form.getTypes().isEmpty()) {
                 predicates.add(root.get("type").in(form.getTypes()));

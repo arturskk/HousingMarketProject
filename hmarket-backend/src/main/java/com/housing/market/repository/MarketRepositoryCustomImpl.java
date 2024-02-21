@@ -1,5 +1,6 @@
-package com.housing.market;
+package com.housing.market.repository;
 
+import com.housing.market.domain.Market;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
@@ -15,14 +16,14 @@ public class MarketRepositoryCustomImpl implements MarketRepositoryCustom {
 
     public BigDecimal calcAggregatedMarketStats(final Specification<Market> spec) {
         final CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        final CriteriaQuery<BigDecimal> query = criteriaBuilder.createQuery(BigDecimal.class);
+        final CriteriaQuery<Double> query = criteriaBuilder.createQuery(Double.class);
         Root<Market> root = query.from(Market.class);
         if (spec != null) {
             query.where(spec.toPredicate(root, query, criteriaBuilder));
 
         }
-        query.select(criteriaBuilder.sum(root.<BigDecimal>get("price")));
-        final TypedQuery<BigDecimal> typedQuery = entityManager.createQuery(query);
-        return typedQuery.getSingleResult();
+        query.select(criteriaBuilder.avg(root.<Double>get("price")));
+        final TypedQuery<Double> typedQuery = entityManager.createQuery(query);
+        return BigDecimal.valueOf(typedQuery.getSingleResult());
     }
 }

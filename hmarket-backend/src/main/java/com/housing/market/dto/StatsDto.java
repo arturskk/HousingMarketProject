@@ -1,4 +1,4 @@
-package com.housing.market;
+package com.housing.market.dto;
 
 import lombok.Builder;
 import java.math.BigDecimal;

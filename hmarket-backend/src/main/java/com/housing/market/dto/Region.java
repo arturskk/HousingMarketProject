@@ -1,4 +1,4 @@
-package com.housing.market;
+package com.housing.market.dto;
 public enum Region {
 
     DLN_WROC_C("Dolnośląskie - Wrocław centrum"),

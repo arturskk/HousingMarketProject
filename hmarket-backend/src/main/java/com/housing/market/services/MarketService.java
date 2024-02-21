@@ -1,5 +1,11 @@
-package com.housing.market;
+package com.housing.market.services;
 
+import com.housing.market.dto.StatsDto;
+import com.housing.market.domain.Market;
+import com.housing.market.form.MarketDataForm;
+import com.housing.market.form.QueryParamsForm;
+import com.housing.market.repository.MarketRepository;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
@@ -14,7 +20,7 @@ public class MarketService {
                 .avgValue(marketRepository.calcAggregatedMarketStats(MarketRepository.search(queryParams)))
                 .build();
     }
-
+    @Transactional
     public void saveMarketHousing(MarketDataForm marketData) {
         marketRepository.deleteAll();
         List<Market> markets = Market.createFromForm(marketData);

@@ -1,4 +1,8 @@
-package com.housing.market;
+package com.housing.market.dto;
+
+import lombok.Getter;
+
+@Getter
 public enum Size {
     S(18,45),
     M(46,80),

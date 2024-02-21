@@ -27,4 +27,8 @@ mail:
   address: <address here>
 
 integration:
-  housingMarket: localhost:8082
+  housingmarket: "http://localhost:8082/"
+
+springdoc:
+  api-docs:
+    path: /openApi
