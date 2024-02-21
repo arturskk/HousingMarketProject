@@ -10,7 +10,7 @@ public class HousingMarketJob {
 
     private final HousingMarketClient housingMarketClient;
 
-    @Scheduled(cron = "0 21 * * ?")
+    @Scheduled(cron = "0 21 * * * ?")
     public void getHousingMarketStats() {
         housingMarketClient.getHousingMarketStats();
     }
