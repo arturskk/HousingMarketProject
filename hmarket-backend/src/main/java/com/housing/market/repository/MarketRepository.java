@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Repository
 public interface MarketRepository extends JpaRepository<Market, Long>, JpaSpecificationExecutor<Market>, MarketRepositoryCustom {
     static Specification<Market> search(QueryParamsForm form) {

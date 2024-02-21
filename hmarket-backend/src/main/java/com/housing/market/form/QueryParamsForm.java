@@ -5,8 +5,8 @@ import com.housing.market.dto.Size;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import java.time.LocalDate;
+
 import java.util.Date;
 @Setter
 @Getter

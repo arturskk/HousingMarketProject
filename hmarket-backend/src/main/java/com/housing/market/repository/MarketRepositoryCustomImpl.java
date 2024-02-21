@@ -9,6 +9,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 import java.math.BigDecimal;
+
 public class MarketRepositoryCustomImpl implements MarketRepositoryCustom {
 
     @PersistenceContext
@@ -22,6 +23,7 @@ public class MarketRepositoryCustomImpl implements MarketRepositoryCustom {
             query.where(spec.toPredicate(root, query, criteriaBuilder));
 
         }
+
         query.select(criteriaBuilder.avg(root.<Double>get("price")));
         final TypedQuery<Double> typedQuery = entityManager.createQuery(query);
         return BigDecimal.valueOf(typedQuery.getSingleResult());
