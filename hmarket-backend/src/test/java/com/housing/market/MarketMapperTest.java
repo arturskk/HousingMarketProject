@@ -5,11 +5,11 @@ import com.housing.market.form.MarketForm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class MarketMapperTest {
+class MarketMapperTest {
     Market.MarketMapper marketMapper = Market.MarketMapper.INSTANCE;
 
     @Test
-    public void formToEntityMarket() {
+     void formToEntityMarket() {
         MarketForm marketForm = MarketFormCreator.builder().defaultValues().build();
         Market market = marketMapper.toEntity(marketForm);
 

@@ -1,6 +1,5 @@
 package com.housing.market.mock;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 

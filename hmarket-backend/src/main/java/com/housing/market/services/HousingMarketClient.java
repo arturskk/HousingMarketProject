@@ -20,13 +20,13 @@ public class HousingMarketClient {
     private final MarketService marketService;
     private final EmailService emailService;
     @Value("${integration.housingmarket}")
-    private String URI;
+    private String uri;
     @Value("${mail.address}")
     private String mailAddress;
 
     @Retry(name = "getHousingMarketStats", fallbackMethod = "fallbackMail")
     public void getHousingMarketStats() {
-        MarketDataForm marketDataForm = restTemplate.exchange(URI + "/api/real-estates/{regionID}", HttpMethod.GET, null, new ParameterizedTypeReference<MarketDataForm>() {
+        MarketDataForm marketDataForm = restTemplate.exchange(uri + "/api/real-estates/{regionID}", HttpMethod.GET, null, new ParameterizedTypeReference<MarketDataForm>() {
         }, Region.LUBSK).getBody();
         if (marketDataForm != null) {
             marketDataForm.getData().forEach(market -> market.setRegionId(Region.LUBSK));
@@ -34,7 +34,7 @@ public class HousingMarketClient {
         }
     }
 
-    private void fallbackMail(RuntimeException re) {
+    private void fallbackMail() {
         emailService.sendEmail(mailAddress, "Data download failed 3 times", "Data download failed 3 times");
     }
 }

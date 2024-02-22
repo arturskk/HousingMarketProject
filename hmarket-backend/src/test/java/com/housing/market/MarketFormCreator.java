@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 @UtilityClass
 public class MarketFormCreator {
 
-
     public static MarketFormBuilder builder() {
         return new MarketFormBuilder();
     }
