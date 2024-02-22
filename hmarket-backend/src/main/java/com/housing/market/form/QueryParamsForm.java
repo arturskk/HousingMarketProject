@@ -1,6 +1,5 @@
 package com.housing.market.form;
 
-import com.housing.market.dto.Region;
 import com.housing.market.dto.Size;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +9,6 @@ import java.time.LocalDate;
 @Setter
 @Getter
 public class QueryParamsForm {
-    private Region regionId;
     private Size size;
     private Integer rooms;
     private String types;

@@ -1,5 +1,6 @@
 package com.housing.market.services;
 
+import com.housing.market.dto.Region;
 import com.housing.market.dto.StatsDto;
 import com.housing.market.domain.Market;
 import com.housing.market.form.MarketDataForm;
@@ -14,10 +15,10 @@ import java.util.List;
 public class MarketService {
 
     private final MarketRepository marketRepository;
-    public StatsDto getMarketStats(QueryParamsForm queryParams){
+    public StatsDto getMarketStats(Region regionId, QueryParamsForm queryParams){
         return StatsDto
                 .builder()
-                .avgValue(marketRepository.calcAggregatedMarketStats(MarketRepository.search(queryParams)))
+                .avgValue(marketRepository.calcAggregatedMarketStats(MarketRepository.search(regionId, queryParams)))
                 .build();
     }
     @Transactional

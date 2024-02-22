@@ -17,8 +17,8 @@ public class HousingMarketController implements HousingMarketApi {
     private final MarketService marketService;
 
     @Operation(summary = "get real estates average price")
-    @GetMapping(path = "/real-estates-stats/{regionId}" )
+    @GetMapping(path = "/real-estates-stats/{regionId}", produces="application/json")
     public StatsDto getRealEstatesStats(@PathVariable Region regionId, QueryParamsForm queryParamsForm) {
-        return marketService.getMarketStats(queryParamsForm);
+        return marketService.getMarketStats(regionId, queryParamsForm);
     }
 }
