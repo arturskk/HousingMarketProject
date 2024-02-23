@@ -1,7 +1,8 @@
 package com.housing.market.controller;
 
+import com.housing.market.config.IntegrationTestBase;
 import com.housing.market.dto.StatsDto;
-import com.housing.market.services.MarketService;
+import com.housing.market.housing.MarketService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

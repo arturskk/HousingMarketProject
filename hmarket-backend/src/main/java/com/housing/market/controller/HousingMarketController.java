@@ -4,7 +4,7 @@ import com.housing.market.api.HousingMarketApi;
 import com.housing.market.dto.Region;
 import com.housing.market.dto.StatsDto;
 import com.housing.market.form.QueryParamsForm;
-import com.housing.market.services.MarketService;
+import com.housing.market.housing.MarketService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

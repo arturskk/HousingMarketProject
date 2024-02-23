@@ -1,4 +1,4 @@
-package com.housing.market.services;
+package com.housing.market.email;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.mail.SimpleMailMessage;

@@ -26,6 +26,6 @@ public class MarketRepositoryCustomImpl implements MarketRepositoryCustom {
 
         query.select(criteriaBuilder.avg(root.<Double>get("price")));
         final TypedQuery<Double> typedQuery = entityManager.createQuery(query);
-        return BigDecimal.valueOf(typedQuery.getSingleResult());
+        return typedQuery.getSingleResult() != null ? BigDecimal.valueOf(typedQuery.getSingleResult()) : BigDecimal.ZERO;
     }
 }

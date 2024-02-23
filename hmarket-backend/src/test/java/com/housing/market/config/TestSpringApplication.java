@@ -1,4 +1,4 @@
-package com.housing.market.controller;
+package com.housing.market.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.housing.market.services;
+package com.housing.market.housing;
 
 import com.housing.market.dto.Region;
 import com.housing.market.dto.StatsDto;
@@ -27,4 +27,5 @@ public class MarketService {
         List<Market> markets = Market.createFromForm(marketData);
         marketRepository.saveAllAndFlush(markets);
     }
+
 }

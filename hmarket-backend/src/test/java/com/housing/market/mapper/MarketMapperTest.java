@@ -1,4 +1,4 @@
-package com.housing.market;
+package com.housing.market.mapper;
 
 import com.housing.market.domain.Market;
 import com.housing.market.form.MarketForm;

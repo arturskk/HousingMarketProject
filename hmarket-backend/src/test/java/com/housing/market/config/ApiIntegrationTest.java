@@ -1,4 +1,4 @@
-package com.housing.market.controller;
+package com.housing.market.config;
 
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

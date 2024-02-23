@@ -1,7 +1,9 @@
-package com.housing.market.services;
+package com.housing.market.integration;
 
 import com.housing.market.form.MarketDataForm;
 import com.housing.market.dto.Region;
+import com.housing.market.housing.MarketService;
+import com.housing.market.email.EmailService;
 import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

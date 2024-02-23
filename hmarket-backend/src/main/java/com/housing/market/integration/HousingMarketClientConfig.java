@@ -1,4 +1,4 @@
-package com.housing.market.services;
+package com.housing.market.integration;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
