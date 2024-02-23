@@ -1,4 +1,4 @@
-package com.housing.market.mapper;
+package com.housing.market.creator;
 
 import com.housing.market.dto.Region;
 import com.housing.market.dto.Type;

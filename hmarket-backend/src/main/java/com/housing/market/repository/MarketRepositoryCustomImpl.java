@@ -9,6 +9,7 @@ import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 import org.springframework.data.jpa.domain.Specification;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class MarketRepositoryCustomImpl implements MarketRepositoryCustom {
 

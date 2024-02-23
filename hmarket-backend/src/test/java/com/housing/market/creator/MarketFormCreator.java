@@ -1,4 +1,4 @@
-package com.housing.market.mapper;
+package com.housing.market.creator;
 
 import com.housing.market.dto.Region;
 import com.housing.market.dto.Type;
@@ -59,8 +59,7 @@ public class MarketFormCreator {
                     .price(BigDecimal.valueOf(100000))
                     .description("Nice house")
                     .type(Type.DETACHED_HOUSE)
-                    .rooms(4)
-                    .type(Type.SEMI_DETACHED_HOUSE);
+                    .rooms(4);
         }
 
         public MarketForm build() {
